@@ -1,7 +1,9 @@
 name: lazynton
 description: "E2EE HTTP client for lazynton servers: rhttp transport, X25519 handshake, XChaCha20-Poly1305 binary bodies."
-version: 0.0.1
+version: 0.1.0
 homepage: https://github.com/prongbang/lazynton-flutter
+repository: https://github.com/prongbang/lazynton-flutter
+issue_tracker: https://github.com/prongbang/lazynton-flutter/issues
 
 environment:
   sdk: ^3.12.1
@@ -11,7 +13,10 @@ dependencies:
   flutter:
     sdk: flutter
   rhttp: ^0.18.0
+  # X25519 handshake keys. The AEAD is driven through `cryptography` directly:
+  # lazyxchacha's own API is hex-in/hex-out, which doubles every body.
   lazyxchacha: ^1.0.1
+  cryptography: ^2.7.0
   convert: ^3.1.1
 
 dev_dependencies:
